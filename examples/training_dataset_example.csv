@@ -1,0 +1,5 @@
+Sample_ID,FilledGrain#,Flowering_Success,Treatment,Cultivation_Type,Population_Label,DTF_50,Plant_height_cm,1_5039,1_8810,OS01T0133400-01,OS03T0289100-01,BIO1,BIO12
+IRGC_001,120,1,Wet,Lowland,indica,83,110,0,1,4.23,1.12,26.3,1430
+IRGC_002,15,0,Drought,Upland,japonica,95,78,2,0,2.91,3.44,24.8,1102
+IRGC_003,85,1,Wet,Lowland,indica,88,105,1,1,5.02,2.05,25.7,1344
+IRGC_004,35,0,Drought,Irrigated,aus,101,82,0,2,1.83,2.77,23.6,980
