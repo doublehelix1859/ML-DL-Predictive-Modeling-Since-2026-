@@ -1,0 +1,30 @@
+#!/bin/bash
+#PBS -N phenotype_step8_validation_importance
+#PBS -lselect=1:ncpus=8:mpiprocs=8:mem=32gb
+#PBS -l place=scatter
+#PBS -l walltime=99:00:00
+#PBS -m abe
+#PBS -M <YOUR_EMAIL_ADDRESS>
+#PBS -o <ABSOLUTE_PATH_TO_PROJECT_WORKING_DIRECTORY>/STEP8_SHAP_Internal_Validation/results.out
+#PBS -e <ABSOLUTE_PATH_TO_PROJECT_WORKING_DIRECTORY>/STEP8_SHAP_Internal_Validation/results.err
+
+# ============================================================
+# phenotype_step8_validation_importance
+# Edit config.env instead of editing paths in this PBS script.
+# After installation, config.env is copied into the ROOT directory.
+# ============================================================
+
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate <YOUR_CONDA_ENV_NAME>
+# Example: conda activate rice_env
+
+set -euo pipefail
+export MPLBACKEND=Agg
+
+ROOT="<ABSOLUTE_PATH_TO_PROJECT_WORKING_DIRECTORY>"
+cd "$ROOT"
+source "$ROOT/config.env"
+export PYTHONPATH="$ROOT:${PYTHONPATH:-}"
+mkdir -p "$ROOT/STEP8_SHAP_Internal_Validation"
+
+python "$ROOT/step8_shap_internal_validation_top3.py"
